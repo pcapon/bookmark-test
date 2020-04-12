@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var itemsRouter = require('./routes/items');
 
 var app = express();
+app.use(cors())
 
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 
