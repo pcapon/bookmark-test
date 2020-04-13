@@ -1,0 +1,34 @@
+.cardItem {
+  margin: auto;
+  display: flex;
+  max-width: 1000px;
+  width: 750px;
+  margin-bottom: 20px;
+  .itemPic {
+    width: 200px;
+  }
+  .right-card {
+    width: 100%;
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      .details {
+        display: flex;
+        flex-direction: column;
+        .content {
+          flex: 1 0 auto;
+          text-align: left;
+        }
+      }
+    }
+    .MuiCardActions-root {
+      justify-content: space-between;
+    }
+  }
+  
+  .chips-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

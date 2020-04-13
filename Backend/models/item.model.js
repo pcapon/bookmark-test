@@ -50,3 +50,33 @@ exports.findAll = () => {
     });
   });
 };
+
+exports.updateKeywords = (id, keywords) => {
+  return new Promise((resolve, reject) => {
+    Item.findByIdAndUpdate(id, { keywords: keywords }).exec(function (
+      err,
+      item
+    ) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(item);
+      }
+    });
+  });
+};
+
+exports.delete = (id) => {
+  return new Promise((resolve, reject) => {
+    Item.findByIdAndDelete(id).exec(function (
+      err,
+      item
+    ) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(item);
+      }
+    });
+  });
+};

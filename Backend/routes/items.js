@@ -8,4 +8,7 @@ router.get('/:itemId', itemsController.getById);
 
 router.get('/', itemsController.getAll);
 
+router.post('/:itemId/keywords', itemsController.addKeywords);
+
+router.delete('/:itemId', itemsController.delete);
 module.exports = router;
