@@ -15,4 +15,4 @@ docker-compose up -d --build
 Now you can access to the app at [http://localhost:5000/](http://localhost:5000/) .
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU](https://choosealicense.com/licenses/gpl-3.0/)
