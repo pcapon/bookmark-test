@@ -25,14 +25,12 @@ services:
       environment:
         - PORT=5000
     mongo:
-      image: mongo:3.6
-      volumes:
-        - mongo-storage:/data/db
-      expose:
-        - 8080
-      ports:
-        - 8080:8080
-
+        image: mongo:3.6
+        volumes:
+          - mongo-storage:/data/db # Nous pouvons ajouter un volume à ce container afin de stocker les données de la base
+        ports:
+          - 27017:27017
+    # Définition des volumes:
 volumes:
-  mongo-storage:
-    driver: local
+    mongo-storage:
+        driver: local
