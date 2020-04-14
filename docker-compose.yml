@@ -1,0 +1,38 @@
+version: "3"
+services:
+    api:
+      container_name: api
+      build: ./Backend/
+      ports:
+        - 80:80
+      volumes:
+        - ./:/usr/src/app
+        - /usr/src/app/node_modules
+      environment:
+        - PORT=80
+      depends_on:
+        - mongo
+    client:
+      stdin_open: true
+      tty: true
+      container_name: client
+      build: ./Frontend/bookmark-test
+      ports:
+        - 5000:5000
+      volumes:
+        - ./:/usr/src/client
+        - /usr/src/client/node_modules
+      environment:
+        - PORT=5000
+    mongo:
+      image: mongo:3.6
+      volumes:
+        - mongo-storage:/data/db
+      expose:
+        - 8080
+      ports:
+        - 8080:8080
+
+volumes:
+  mongo-storage:
+    driver: local

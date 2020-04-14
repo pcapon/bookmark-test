@@ -12,7 +12,7 @@ var itemsRouter = require("./routes/items");
 var app = express();
 app.use(cors());
 
-mongoose.connect("mongodb://localhost/test", {
+mongoose.connect("mongodb://mongo/database", {
   useNewUrlParser: true,
   useFindAndModify: false,
 });
